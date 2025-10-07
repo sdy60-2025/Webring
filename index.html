@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSV Links Front Page</title>
+<title>My Links</title>
 <style>
   body {
     font-family: system-ui, sans-serif;
@@ -13,50 +13,53 @@
   }
   h1 {
     color: #0077cc;
+    text-align: center;
   }
   ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
+    max-width: 600px;
+    margin: 2rem auto;
   }
   li {
-    padding: 0.25rem 0;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   a {
-    color: #0066cc;
     text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
   }
   a:hover {
     text-decoration: underline;
   }
+  footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #777;
+    font-size: 0.85rem;
+  }
 </style>
 </head>
 <body>
-<h1>All Links</h1>
-<ul id="linkList"></ul>
 
-<script>
-  const csvFiles = ['links1.csv','links2.csv','links3.csv']; // Add all your CSV files here
-  const linkList = document.getElementById('linkList');
+<h1>My Links</h1>
 
-  csvFiles.forEach(file => {
-    fetch(file)
-      .then(response => response.text())
-      .then(text => {
-        const rows = text.split(/\r?\n/).filter(line => line.trim() !== '');
-        rows.forEach(link => {
-          let url = link.trim();
-          if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = url;
-          a.target = "_blank";
-          a.textContent = url;
-          li.appendChild(a);
-          linkList.appendChild(li);
-        });
-      })
-      .catch(err => console.error('Error loading CSV:', file, err));
-  });
-</script>
+<ul>
+  <li><a href="https://example.com" target="_blank">Example</a></li>
+  <li><a href="https://openai.com" target="_blank">OpenAI</a></li>
+  <li><a href="https://github.com" target="_blank">GitHub</a></li>
+  <li><a href="https://news.ycombinator.com" target="_blank">Hacker News</a></li>
+  <li><a href="https://reddit.com" target="_blank">Reddit</a></li>
+  <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+  <li><a href="https://wikipedia.org" target="_blank">Wikipedia</a></li>
+  <li><a href="https://mozilla.org" target="_blank">Mozilla</a></li>
+</ul>
+
+<footer>© 2025 Your Name — MIT Licensed</footer>
+
 </body>
 </html>
