@@ -1,91 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" id="rss">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="con" type="image/png" sizes="100x100" href="favicon.ico">
-		<link rel="apple-touch-icon" type="image/png" sizes="100x100" href="favicon.ico">
-		<title>Webring</title>
-	</head>
-	<body id="twtxt">
-		<ol id="icons">
-			<li data-lang="en" id="spylog">
-				<a href="https://spyros.github.io/online-cv/">Σπυρος Σπυρου</a>
-			</li>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV Link Viewer</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      color: #0077cc;
+      margin-bottom: 1rem;
+    }
+    .upload-box {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+    input[type="file"] {
+      display: block;
+      margin: 1rem auto;
+    }
+    .links {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .links h3 {
+      color: #0077cc;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.25rem;
+    }
+    a {
+      display: block;
+      padding: 0.25rem 0;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
 
-			<li data-lang="en" id="Maurphal">
-                             <a href="https://github.com/Maurphal/Maurphal/">ονομα</a>
-			</li>
-			
-			<li data-lang="en" id="giorgos-christou">
-				<a href="https://giorgos-christou.github.io/best-resume-ever/">ονομα</a>
-			</li>
+  <div class="upload-box">
+    <h1>CSV Link Viewer</h1>
+    <p>Upload up to 8 CSV files containing URLs.</p>
+    <input type="file" id="csvInput" accept=".csv" multiple>
+    <div id="output" class="links"></div>
+  </div>
 
-			<li data-lang="en" id="nikos7887">
-				<a href="https://nikos7887.github.io/nikdouv/">ονομα</a>
-			</li>
-			
-			<li data-lang="en" id="odyszagoras">
-				<a href="https://github.com/odyszagoras/Odysseas-Zagoras-CV/">ονομα</a>
-			</li>
-			<li data-lang="en" id="std159312">
-				<a href="https://std159312.github.io/">ονομας</a>
-			</li>
-			<li data-lang="en" id="ioannistheodoropoulos">
-				<a href="https://ioannistheodoropoulos.github.io/">ονομας</a>
-			</li>
-			<li data-lang="en" id="Asinapis13">
-				<a href="https://asinapis13.github.io/index.html">ονομα</a>
-			</li>
-			<li data-lang="en" id="konssven">
-				<a href="https://konssven.github.io/">Σονομα</a>
-			</li>
-                         <li data-lang="en" id="std133524">
-			   <a href="https://std133524.github.io/simple-cv/"> ονομα</a>
-			 </li>
-			<li data-lang="en" id="iparthenios">
-				<a href="https://iparthenios.github.io/online-cv/">ονομα</a>
-			</li>
-		</ol>
-		<footer>
-			<p class="readme">
-				This webring is an attempt to inspire artists &amp; developers to build their websites and share traffic amongst each other. The ring welcomes <b>hand-crafted wikis and portfolios</b>.
-			</p>
-			<p>
-				To add yourself to the ring, submit a <a href="https://github.com/XXIIVV/webring#join-the-webring" target="_blank">pull request</a>.<br />
-				Looking for something specific, use the <a href="https://lieu.cblgh.org" target="_blank">search</a>.<br />
-				Found a broken link, please <a href="https://github.com/XXIIVV/webring/issues/new" target="_blank">report it</a>.<br /><br />
-				<a href="#icons">Show icons</a> | <a href="#twtxt">Show twtxt</a> | <a href="#rss">Show rss</a><span class="hide"> | <a href="#">Hide Feeds</a></span> | <a href="https://lieu.cblgh.org/random" target="_blank">Random</a>
-			</p>
-			<img id="icon" src="icon.black.large.svg" alt="icon"/>
-		</footer>
-		<style>
-			:root { --color-alpha: white; --color-beta: black; }
-			body { padding: 0; margin: 0 0 0 0; background-color: var(--color-alpha); color: var(--color-beta); font-family: serif; max-width: 900px; }
-			body a { color: var(--color-beta); text-decoration: none; }
-			body a:hover { background-color: var(--color-beta); color: var(--color-alpha); }
-			body a:before { content: '{'; }
-			body a:after { content: '}'; }
-			body > ol { margin: 30px; padding: 0px 30px 30px; column-count: 3; display: block; border-bottom: 2px solid var(--color-beta); }
-			body > ol > li { padding-right: 30px; }
-			body > ol > li img { display: none; margin:5px; max-width: 88px }
-			body > ol > li a.rss, body > ol > li a.twtxt { display: none; }
-			body > ol > li a:visited:before, body > ol > li a:visited:after { color: var(--color-alpha); }
-			body > footer { margin: 30px; }
-			body > footer > p { max-width: 600px; }
-			body > footer > p span.hide { display: none; }
-			body > footer > img { display: inline-block; width: 100px; margin-bottom: -5px; margin-bottom: 30px; }
-			body:target > ol li a.twtxt, html:target li a.rss { background: var(--color-beta); color: var(--color-alpha); display: inline; }
-			body:target > footer > p > span.hide, html:target footer > p > span.hide { display: inline; }
-			body > ol:target > li > img { display:block; }
-			body > ol > li:target a { color: var(--color-alpha); }
-			body > ol > li:target { background: var(--color-beta); }
-			@media screen and (max-width: 800px) { body > ol { column-count: 2; } }
-			@media screen and (max-width: 600px) { body > ol { column-count: 1; } }
-			@media (prefers-color-scheme: dark) {
-			:root { --color-alpha: black; --color-beta: white; }
-			#icon { filter: invert(100%); }
-			}
-		</style>
-	</body>
+  <footer>© 2025 Your Name — MIT Licensed</footer>
+
+  <script>
+    const input = document.getElementById('csvInput');
+    const output = document.getElementById('output');
+
+    input.addEventListener('change', () => {
+      const files = Array.from(input.files);
+      output.innerHTML = '';
+
+      if (files.length > 8) {
+        alert('You can upload a maximum of 8 CSV files.');
+        input.value = '';
+        return;
+      }
+
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          const text = e.target.result;
+          const rows = text.split(/\r?\n/).filter(line => line.trim() !== '');
+          const div = document.createElement('div');
+          div.innerHTML = `<h3>${file.name}</h3>`;
+          
+          rows.forEach(link => {
+            // Clean and validate link
+            let url = link.trim();
+            if (!/^https?:\/\//i.test(url)) {
+              url = 'https://' + url;
+            }
+            const a = document.createElement('a');
+            a.href = url;
+            a.textContent = url;
+            a.target = "_blank";
+            div.appendChild(a);
+          });
+          output.appendChild(div);
+        };
+        reader.readAsText(file);
+      });
+    });
+  </script>
+
+</body>
 </html>
