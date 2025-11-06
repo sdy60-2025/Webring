@@ -10,11 +10,13 @@
     background: #f4f4f9;
     color: #333;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   h1 {
     color: #0077cc;
     text-align: center;
-    position: relative;
   }
   .header-logos {
     display: flex;
@@ -23,7 +25,7 @@
     max-width: 900px;
     margin: 0 auto 2rem auto;
   }
-  .header-logos img, .footer-logos img {
+  .header-logos img {
     width: 160px;
   }
   .content-wrapper {
@@ -31,6 +33,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    flex-grow: 1;
   }
   ul {
     list-style-type: none;
@@ -52,18 +55,20 @@
   a:hover {
     text-decoration: underline;
   }
-  .footer-logos {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    max-width: 900px;
-    margin: 1.5rem auto 0 auto;
-  }
   footer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2rem;
     color: #777;
     font-size: 0.85rem;
+    position: relative;
+  }
+  .footer-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150px;
   }
 </style>
 </head>
@@ -88,11 +93,10 @@
   </ul>
 </div>
 
-<div class="footer-logos">
-  <img src="images/3.jpg" alt="Bottom Left Logo">
-</div>
-
-<footer>© 2025 SDY-60 — MIT Licensed</footer>
+<footer>
+  <img class="footer-image" src="images/3.jpg" alt="Bottom Left Logo">
+  © 2025 SDY-60 — MIT Licensed
+</footer>
 
 </body>
 </html>
