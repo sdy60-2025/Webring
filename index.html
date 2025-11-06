@@ -15,11 +15,20 @@
     color: #0077cc;
     text-align: center;
   }
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  .logo {
+    width: 160px;
+  }
   ul {
     list-style-type: none;
     padding: 0;
     max-width: 600px;
-    margin: 2rem auto;
   }
   li {
     background: #fff;
@@ -46,18 +55,24 @@
 </head>
 <body>
 
-<h1> 2025 -2026 SDY 60 Class CVs</h1>
+<h1>2025-2026 SDY 60 Class CVs</h1>
 
-<ul>
-  <li><a href="https://apapost-biography.netlify.app/" target="_blank">Apostolos Apostolidis</a></li>
-  <li><a href="https://panagiotisbeligiannis.github.io/my_CV" target="_blank">Panagiotis Beligiannis</a></li>
-  <li><a href="https://evangeloschr.github.io/GE1_MyCV_Christodoulou/" target="_blank">Evangelos Christodoulou</a></li>
-  <li><a href="https://aegeandp.github.io/Dimitris_PApadopoulos_CV/" target="_blank">Dimitris Papadopoulos</a></li>
-  <li><a href="https://cvURL.com" target="_blank">ΕΔΩ ΓΡΑΦΕΙ Η ΑΣΠΑΣΙΑ </a></li>
-  <li><a href="https://christos-sp.github.io/myCV/" target="_blank">Christos Spendas</a></li>
-  <li><a href="https://spiros40.github.io/cv/" target="_blank">Spyros Spyrou</a></li>
-  <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank">Spiros Zervos</a></li>
-</ul>
+<div class="content-wrapper">
+  <a href="https://study.eap.gr" target="_blank" rel="noopener noreferrer">
+    <img class="logo" src="https://study.eap.gr/pluginfile.php/135301/block_html/content/logo_eap_new%20white.png" alt="EAP Logo">
+  </a>
+
+  <ul id="cv-list">
+    <li><a href="https://apapost-biography.netlify.app/" target="_blank" rel="noopener noreferrer">Apostolos Apostolidis</a></li>
+    <li><a href="https://panagiotisbeligiannis.github.io/my_CV" target="_blank" rel="noopener noreferrer">Panagiotis Beligiannis</a></li>
+    <li><a href="https://evangeloschr.github.io/GE1_MyCV_Christodoulou/" target="_blank" rel="noopener noreferrer">Evangelos Christodoulou</a></li>
+    <li><a href="https://siadal.github.io/myCV" target="_blank" rel="noopener noreferrer">Aspasia Dalanika</a></li>
+    <li><a href="https://aegeandp.github.io/Dimitris_PApadopoulos_CV/" target="_blank" rel="noopener noreferrer">Dimitris Papadopoulos</a></li>
+    <li><a href="https://christos-sp.github.io/myCV/" target="_blank" rel="noopener noreferrer">Christos Spendas</a></li>
+    <li><a href="https://spiros40.github.io/cv/" target="_blank" rel="noopener noreferrer">Spyros Spyrou</a></li>
+    <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank" rel="noopener noreferrer">Spiros Zervos</a></li>
+  </ul>
+</div>
 
 <footer>© 2025 SDY-60 — MIT Licensed</footer>
 
