@@ -15,31 +15,46 @@
   h1 {
     color: #0077cc;
     margin-bottom: 1rem;
-    position: relative;
   }
-  .header-images {
-    display: flex;
-    justify-content: space-between;
+
+  /* Επάνω: εικόνα 1 (αριστερά), τίτλος στη μέση, εικόνα 2 (δεξιά) */
+  .header-row {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    max-width: 900px;
-    margin: 0 auto 1rem auto;
+    gap: 1rem;
   }
-  .header-images img {
-    width: 140px;
-  }
-  .content-wrapper {
+  .header-row .img-wrap {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
+    align-items: center;
+  }
+  .header-row img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  /* Μέση: λίστα ονομάτων στο κέντρο */
+  .content {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
   }
   ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    width: 300px;
+    margin: 0;
+    width: min(600px, 90%);
   }
   li {
     background: #fff;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
-    bor
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  a {
+    text-decora
