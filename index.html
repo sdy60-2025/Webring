@@ -14,16 +14,23 @@
   h1 {
     color: #0077cc;
     text-align: center;
+    position: relative;
+  }
+  .header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+  }
+  .header-logos img {
+    width: 160px;
   }
   .content-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
-    gap: 2rem;
-  }
-  .logo {
-    width: 160px;
+    margin-top: 1rem;
   }
   ul {
     list-style-type: none;
@@ -55,13 +62,13 @@
 </head>
 <body>
 
-<h1>2025-2026 SDY 60 Class CVs</h1>
+<div class="header-logos">
+  <img src="images/1.png" alt="Left Logo">
+  <h1>2025-2026 SDY 60 Class CVs</h1>
+  <img src="images/2.png" alt="Right Logo">
+</div>
 
 <div class="content-wrapper">
-  <a href="https://study.eap.gr" target="_blank" rel="noopener noreferrer">
-    <img class="logo" src="https://study.eap.gr/pluginfile.php/135301/block_html/content/logo_eap_new%20white.png" alt="EAP Logo">
-  </a>
-
   <ul id="cv-list">
     <li><a href="https://apapost-biography.netlify.app/" target="_blank" rel="noopener noreferrer">Apostolos Apostolidis</a></li>
     <li><a href="https://panagiotisbeligiannis.github.io/my_CV" target="_blank" rel="noopener noreferrer">Panagiotis Beligiannis</a></li>
@@ -69,12 +76,4 @@
     <li><a href="https://siadal.github.io/myCV" target="_blank" rel="noopener noreferrer">Aspasia Dalanika</a></li>
     <li><a href="https://aegeandp.github.io/Dimitris_PApadopoulos_CV/" target="_blank" rel="noopener noreferrer">Dimitris Papadopoulos</a></li>
     <li><a href="https://christos-sp.github.io/myCV/" target="_blank" rel="noopener noreferrer">Christos Spendas</a></li>
-    <li><a href="https://spiros40.github.io/cv/" target="_blank" rel="noopener noreferrer">Spyros Spyrou</a></li>
-    <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank" rel="noopener noreferrer">Spiros Zervos</a></li>
-  </ul>
-</div>
-
-<footer>© 2025 SDY-60 — MIT Licensed</footer>
-
-</body>
-</html>
+    <li><a href="https://spiros40.github.io/cv/" ta
