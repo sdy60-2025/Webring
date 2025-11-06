@@ -10,9 +10,6 @@
     background: #f4f4f9;
     color: #333;
     padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
   h1 {
     color: #0077cc;
@@ -27,18 +24,20 @@
   }
   .header-logos img {
     width: 160px;
+    display: block;
   }
   .content-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 1rem;
-    flex-grow: 1;
+    position: relative;
   }
   ul {
     list-style-type: none;
     padding: 0;
     max-width: 600px;
+    z-index: 1;
   }
   li {
     background: #fff;
@@ -55,20 +54,23 @@
   a:hover {
     text-decoration: underline;
   }
-  footer {
+  .side-figure {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .side-figure img {
+    width: 130px;
+  }
+  footer {
+    text-align: center;
     margin-top: 2rem;
     color: #777;
     font-size: 0.85rem;
-    position: relative;
-  }
-  .footer-image {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 150px;
   }
 </style>
 </head>
@@ -81,6 +83,10 @@
 </div>
 
 <div class="content-wrapper">
+  <div class="side-figure">
+    <img src="images/3.jpg" alt="Bottom Left Logo" style="margin-top: 200px;">
+  </div>
+
   <ul id="cv-list">
     <li><a href="https://apapost-biography.netlify.app/" target="_blank" rel="noopener noreferrer">Apostolos Apostolidis</a></li>
     <li><a href="https://panagiotisbeligiannis.github.io/my_CV" target="_blank" rel="noopener noreferrer">Panagiotis Beligiannis</a></li>
@@ -93,10 +99,7 @@
   </ul>
 </div>
 
-<footer>
-  <img class="footer-image" src="images/3.jpg" alt="Bottom Left Logo">
-  © 2025 SDY-60 — MIT Licensed
-</footer>
+<footer>© 2025 SDY-60 — MIT Licensed</footer>
 
 </body>
 </html>
