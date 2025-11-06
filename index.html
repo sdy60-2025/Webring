@@ -51,6 +51,16 @@
     color: #777;
     font-size: 0.85rem;
   }
+
+  /* Responsive για μικρές οθόνες */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+    .logo {
+      width: 120px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -59,7 +69,7 @@
 
 <div class="content-wrapper">
   <a href="https://study.eap.gr" target="_blank" rel="noopener noreferrer">
-    <img class="logo" src="https://study.eap.gr/pluginfile.php/135301/block_html/content/logo_eap_new%20white.png" alt="EAP Logo">
+    <img class="logo" src="EAP_1.png" alt="EAP Logo Left">
   </a>
 
   <ul id="cv-list">
@@ -72,6 +82,10 @@
     <li><a href="https://spiros40.github.io/cv/" target="_blank" rel="noopener noreferrer">Spyros Spyrou</a></li>
     <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank" rel="noopener noreferrer">Spiros Zervos</a></li>
   </ul>
+
+  <a href="https://study.eap.gr" target="_blank" rel="noopener noreferrer">
+    <img class="logo" src="EAP_2.png" alt="EAP Logo Right">
+  </a>
 </div>
 
 <footer>© 2025 SDY-60 — MIT Licensed</footer>
