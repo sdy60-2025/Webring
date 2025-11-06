@@ -54,16 +54,20 @@
   a:hover {
     text-decoration: underline;
   }
-  .side-figure {
+  .side-figure-left, .side-figure-right {
     position: absolute;
-    left: 0;
-    top: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: flex-end;
   }
-  .side-figure img {
+  .side-figure-left {
+    left: 0;
+  }
+  .side-figure-right {
+    right: 0;
+  }
+  .side-figure-left img, .side-figure-right img {
     width: 130px;
   }
   footer {
@@ -83,8 +87,8 @@
 </div>
 
 <div class="content-wrapper">
-  <div class="side-figure">
-    <img src="images/3.jpg" alt="Bottom Left Logo" style="margin-top: 200px;">
+  <div class="side-figure-left">
+    <img src="images/3.jpg" alt="Bottom Left Logo">
   </div>
 
   <ul id="cv-list">
@@ -97,6 +101,10 @@
     <li><a href="https://spiros40.github.io/cv/" target="_blank" rel="noopener noreferrer">Spyros Spyrou</a></li>
     <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank" rel="noopener noreferrer">Spiros Zervos</a></li>
   </ul>
+
+  <div class="side-figure-right">
+    <img src="images/4.jpg" alt="Bottom Right Logo">
+  </div>
 </div>
 
 <footer>© 2025 SDY-60 — MIT Licensed</footer>
