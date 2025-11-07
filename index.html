@@ -70,6 +70,7 @@
   }
   .side-figure-left img, .side-figure-right img {
     width: 130px;
+    height: auto;
   }
   footer {
     text-align: center;
@@ -84,17 +85,16 @@
       width: 130px;
     }
 
-    /* Κάνουμε grid ώστε να “κάθονται” σωστά οι πλευρικές εικόνες */
+    /* Grid για σωστή τοποθέτηση πλευρικών εικόνων */
     .content-wrapper {
       display: grid;
       grid-template-columns: 1fr minmax(280px, 600px) 1fr; /* αριστερά - λίστα - δεξιά */
       align-items: end;
       justify-items: center;
       gap: 1rem;
-      position: relative; /* κρατάμε για συμβατότητα */
+      position: relative;
     }
 
-    /* Η λίστα στο κέντρο */
     .content-wrapper > ul#cv-list {
       grid-column: 2;
       grid-row: 1;
@@ -102,7 +102,6 @@
       z-index: 1;
     }
 
-    /* Βγάζουμε το absolute και τοποθετούμε αριστερά/δεξιά */
     .side-figure-left,
     .side-figure-right {
       position: static;
@@ -113,12 +112,12 @@
     .side-figure-left {
       grid-column: 1;
       grid-row: 1;
-      justify-content: flex-end; /* έλα λίγο προς τα μέσα από αριστερά */
+      justify-content: flex-end;
     }
     .side-figure-right {
       grid-column: 3;
       grid-row: 1;
-      justify-content: flex-start; /* έλα λίγο προς τα μέσα από δεξιά */
+      justify-content: flex-start;
     }
 
     .side-figure-left img,
@@ -127,7 +126,7 @@
     }
   }
 
-  /* ====== Mobile (<= 640px) ====== */
+  /* ====== Mobile portrait (<= 640px) — ΔΙΟΡΘΩΣΗ ====== */
   @media (max-width: 640px) {
     .header-logos {
       flex-direction: column;
@@ -137,34 +136,38 @@
       width: 90px;
     }
 
-    /* Μία στήλη: πρώτα η λίστα, από κάτω οι δύο εικόνες 3 & 4 άκρη-άκρη */
+    /* ΔΥΟ στήλες: 
+       - Γραμμή 1: η λίστα πιάνει ΚΑΙ τις 2 στήλες 
+       - Γραμμή 2: 3.jpg στην 1η στήλη, 4.jpg στη 2η στήλη */
     .content-wrapper {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
       justify-items: center;
+      align-items: end;
       gap: 0.75rem;
+      position: static; /* βγάζουμε absolute context για καθαρή στοίχιση */
     }
 
     .content-wrapper > ul#cv-list {
-      grid-column: 1;
+      grid-column: 1 / span 2; /* πιάνει και τις 2 στήλες */
       grid-row: 1;
       width: min(600px, 92%);
+      z-index: 1;
     }
 
     .side-figure-left,
     .side-figure-right {
-      position: static;
-      grid-column: 1;
-      grid-row: 2;             /* κάτω από τη λίστα */
-      width: min(600px, 92%);  /* ίδιο πλάτος με τη λίστα */
+      position: static;        /* βγάζουμε absolute */
+      width: 100%;
     }
-    .side-figure-left  { justify-content: flex-start; }
-    .side-figure-right { justify-content: flex-end;   }
+    .side-figure-left  { grid-column: 1; grid-row: 2; justify-content: flex-start; }
+    .side-figure-right { grid-column: 2; grid-row: 2; justify-content: flex-end;   }
 
     .side-figure-left img,
     .side-figure-right img {
-      width: 90px;
+      width: 90px;           /* μικρότερο πλάτος για κινητό */
+      max-width: 40vw;       /* ασφάλεια σε πολύ μικρές οθόνες */
     }
   }
 </style>
