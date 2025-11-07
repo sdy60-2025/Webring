@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SDY 60 class CVs</title>
 <style>
+  /* ====== Desktop (όπως το έχεις τώρα) ====== */
   body {
     font-family: system-ui, sans-serif;
     background: #f4f4f9;
@@ -62,10 +63,10 @@
     justify-content: flex-end;
   }
   .side-figure-left {
-    left: 450px;
+    left: 450px;  /* οι τιμές σου για desktop */
   }
   .side-figure-right {
-    right: 500px;
+    right: 500px; /* οι τιμές σου για desktop */
   }
   .side-figure-left img, .side-figure-right img {
     width: 130px;
@@ -75,6 +76,96 @@
     margin-top: 2rem;
     color: #777;
     font-size: 0.85rem;
+  }
+
+  /* ====== Tablet (<= 1024px) ====== */
+  @media (max-width: 1024px) {
+    .header-logos img {
+      width: 130px;
+    }
+
+    /* Κάνουμε grid ώστε να “κάθονται” σωστά οι πλευρικές εικόνες */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 600px) 1fr; /* αριστερά - λίστα - δεξιά */
+      align-items: end;
+      justify-items: center;
+      gap: 1rem;
+      position: relative; /* κρατάμε για συμβατότητα */
+    }
+
+    /* Η λίστα στο κέντρο */
+    .content-wrapper > ul#cv-list {
+      grid-column: 2;
+      grid-row: 1;
+      width: 100%;
+      z-index: 1;
+    }
+
+    /* Βγάζουμε το absolute και τοποθετούμε αριστερά/δεξιά */
+    .side-figure-left,
+    .side-figure-right {
+      position: static;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+    }
+    .side-figure-left {
+      grid-column: 1;
+      grid-row: 1;
+      justify-content: flex-end; /* έλα λίγο προς τα μέσα από αριστερά */
+    }
+    .side-figure-right {
+      grid-column: 3;
+      grid-row: 1;
+      justify-content: flex-start; /* έλα λίγο προς τα μέσα από δεξιά */
+    }
+
+    .side-figure-left img,
+    .side-figure-right img {
+      width: 110px;
+    }
+  }
+
+  /* ====== Mobile (<= 640px) ====== */
+  @media (max-width: 640px) {
+    .header-logos {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .header-logos img {
+      width: 90px;
+    }
+
+    /* Μία στήλη: πρώτα η λίστα, από κάτω οι δύο εικόνες 3 & 4 άκρη-άκρη */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      justify-items: center;
+      gap: 0.75rem;
+    }
+
+    .content-wrapper > ul#cv-list {
+      grid-column: 1;
+      grid-row: 1;
+      width: min(600px, 92%);
+    }
+
+    .side-figure-left,
+    .side-figure-right {
+      position: static;
+      grid-column: 1;
+      grid-row: 2;             /* κάτω από τη λίστα */
+      width: min(600px, 92%);  /* ίδιο πλάτος με τη λίστα */
+    }
+    .side-figure-left  { justify-content: flex-start; }
+    .side-figure-right { justify-content: flex-end;   }
+
+    .side-figure-left img,
+    .side-figure-right img {
+      width: 90px;
+    }
   }
 </style>
 </head>
