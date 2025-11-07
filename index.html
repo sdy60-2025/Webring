@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SDY 60 class CVs</title>
 <style>
+  /* ====== Desktop (όπως το έχεις τώρα) ====== */
   body {
     font-family: system-ui, sans-serif;
     background: #f4f4f9;
@@ -15,11 +16,29 @@
     color: #0077cc;
     text-align: center;
   }
+  .header-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+  }
+  .header-logos img {
+    width: 160px;
+    display: block;
+  }
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1rem;
+    position: relative;
+  }
   ul {
     list-style-type: none;
     padding: 0;
     max-width: 600px;
-    margin: 2rem auto;
+    z-index: 1;
   }
   li {
     background: #fff;
@@ -36,31 +55,151 @@
   a:hover {
     text-decoration: underline;
   }
+  .side-figure-left, .side-figure-right {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .side-figure-left {
+    left: 450px;  /* οι τιμές σου για desktop */
+  }
+  .side-figure-right {
+    right: 500px; /* οι τιμές σου για desktop */
+  }
+  .side-figure-left img, .side-figure-right img {
+    width: 130px;
+    height: auto;
+  }
   footer {
     text-align: center;
     margin-top: 2rem;
     color: #777;
     font-size: 0.85rem;
   }
+
+  /* ====== Tablet (<= 1024px) ====== */
+  @media (max-width: 1024px) {
+    .header-logos img {
+      width: 130px;
+    }
+
+    /* Grid για σωστή τοποθέτηση πλευρικών εικόνων */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr minmax(280px, 600px) 1fr; /* αριστερά - λίστα - δεξιά */
+      align-items: end;
+      justify-items: center;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .content-wrapper > ul#cv-list {
+      grid-column: 2;
+      grid-row: 1;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .side-figure-left,
+    .side-figure-right {
+      position: static;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+    }
+    .side-figure-left {
+      grid-column: 1;
+      grid-row: 1;
+      justify-content: flex-end;
+    }
+    .side-figure-right {
+      grid-column: 3;
+      grid-row: 1;
+      justify-content: flex-start;
+    }
+
+    .side-figure-left img,
+    .side-figure-right img {
+      width: 110px;
+    }
+  }
+
+  /* ====== Mobile portrait (<= 640px) — ΔΙΟΡΘΩΣΗ ====== */
+  @media (max-width: 640px) {
+    .header-logos {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .header-logos img {
+      width: 90px;
+    }
+
+    /* ΔΥΟ στήλες: 
+       - Γραμμή 1: η λίστα πιάνει ΚΑΙ τις 2 στήλες 
+       - Γραμμή 2: 3.jpg στην 1η στήλη, 4.jpg στη 2η στήλη */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      justify-items: center;
+      align-items: end;
+      gap: 0.75rem;
+      position: static; /* βγάζουμε absolute context για καθαρή στοίχιση */
+    }
+
+    .content-wrapper > ul#cv-list {
+      grid-column: 1 / span 2; /* πιάνει και τις 2 στήλες */
+      grid-row: 1;
+      width: min(600px, 92%);
+      z-index: 1;
+    }
+
+    .side-figure-left,
+    .side-figure-right {
+      position: static;        /* βγάζουμε absolute */
+      width: 100%;
+    }
+    .side-figure-left  { grid-column: 1; grid-row: 2; justify-content: flex-start; }
+    .side-figure-right { grid-column: 2; grid-row: 2; justify-content: flex-end;   }
+
+    .side-figure-left img,
+    .side-figure-right img {
+      width: 90px;           /* μικρότερο πλάτος για κινητό */
+      max-width: 40vw;       /* ασφάλεια σε πολύ μικρές οθόνες */
+    }
+  }
 </style>
 </head>
 <body>
 
-<h1>2025-2026 SDY 60 Class CVs</h1>
+<div class="header-logos">
+  <img src="images/1.png" alt="Left Logo">
+  <h1>2025-2026 SDY 60 Class CVs</h1>
+  <img src="images/2.png" alt="Right Logo">
+</div>
 
-<ul>
-  <li><a href="https://apapost-biography.netlify.app/" target="_blank">Apostolos Apostolidis</a></li>
-  <li><a href="https://panagiotisbeligiannis.github.io/my_CV" target="_blank">Panagiotis Beligiannis</a></li>
-  <li><a href="https://evangeloschr.github.io/GE1_MyCV_Christodoulou/" target="_blank">Evangelos Christodoulou</a></li>
-  <li><a href="https://siadal.github.io/myCV" target="_blank">Aspasia Dalanika</a></li>
-  <li><a href="https://aegeandp.github.io/Dimitris_PApadopoulos_CV/" target="_blank">Dimitris Papadopoulos</a></li>
-  <li><a href="https://christos-sp.github.io/myCV/" target="_blank">Christos Spendas</a></li>
-  <li><a href="https://spiros40.github.io/cv/" target="_blank">Spyros Spyrou</a></li>
-  <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank">Spiros Zervos</a></li>
-</ul>
+<div class="content-wrapper">
+  <div class="side-figure-left">
+    <img src="images/3.jpg" alt="Bottom Left Logo">
+  </div>
 
- 
-</ul>
+  <ul id="cv-list">
+    <li><a href="https://apapost-biography.netlify.app/" target="_blank" rel="noopener noreferrer">Apostolos Apostolidis</a></li>
+    <li><a href="https://panagiotisbeligiannis.github.io/my_CV" target="_blank" rel="noopener noreferrer">Panagiotis Beligiannis</a></li>
+    <li><a href="https://evangeloschr.github.io/GE1_MyCV_Christodoulou/" target="_blank" rel="noopener noreferrer">Evangelos Christodoulou</a></li>
+    <li><a href="https://siadal.github.io/myCV" target="_blank" rel="noopener noreferrer">Aspasia Dalanika</a></li>
+    <li><a href="https://aegeandp.github.io/Dimitris_PApadopoulos_CV/" target="_blank" rel="noopener noreferrer">Dimitris Papadopoulos</a></li>
+    <li><a href="https://christos-sp.github.io/myCV/" target="_blank" rel="noopener noreferrer">Christos Spendas</a></li>
+    <li><a href="https://spiros40.github.io/cv/" target="_blank" rel="noopener noreferrer">Spyros Spyrou</a></li>
+    <li><a href="https://spiros1979.github.io/markdown-cv/" target="_blank" rel="noopener noreferrer">Spiros Zervos</a></li>
+  </ul>
+
+  <div class="side-figure-right">
+    <img src="images/4.jpg" alt="Bottom Right Logo">
+  </div>
+</div>
 
 <footer>© 2025 SDY-60 — MIT Licensed</footer>
 
